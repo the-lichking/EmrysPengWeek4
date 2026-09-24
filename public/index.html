@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteTaker - 笔记应用</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📝 NoteTaker</h1>
+            <p>专业的笔记管理应用</p>
+        </header>
+
+        <div class="main-content">
+            <!-- 编辑区域 -->
+            <div class="editor-section">
+                <div class="editor-header">
+                    <h2 id="editorTitle">新建笔记</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索笔记..." />
+                        <button onclick="searchNotes()">🔍 搜索</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="noteTitle">笔记标题</label>
+                    <input type="text" id="noteTitle" placeholder="输入标题..." />
+                </div>
+
+                <div class="form-group">
+                    <label for="noteContent">笔记内容</label>
+                    <textarea id="noteContent" placeholder="开始写笔记..."></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-save" onclick="saveNote()">💾 保存笔记</button>
+                    <button class="btn-new" onclick="newNote()">➕ 新建笔记</button>
+                    <button class="btn-clear" onclick="clearEditor()">🗑️ 清空</button>
+                </div>
+
+                <div id="statusMessage" class="status-message"></div>
+            </div>
+
+            <!-- 笔记列表侧边栏 -->
+            <div class="notes-sidebar">
+                <div class="sidebar-header">
+                    <h2>我的笔记</h2>
+                    <span id="notesCount" class="notes-count">0</span>
+                </div>
+                <ul class="notes-list" id="notesList">
+                    <!-- 笔记将通过 JavaScript 动态加载 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
